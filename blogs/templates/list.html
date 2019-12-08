@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% {% regroup pages|dictsory:'author' by request.user as user_pages %}}
+{% block content %}
+  <h3>Wikis {% if pages %}<small class="text-muted">({{ user_pages|length }} Page{{ user_pages|length|pluralize:"s" }})</small>{% endif %}</h3>
+  <hr>
+  {% if pages %}
+    <div class="card-columns">
+      {% for page in pages %}
+        {% if page.author == user %}
+          {% include "partials/card.html" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+  {% endif %}
+{% endblock %}
+
+
+
+
