@@ -25,7 +25,7 @@ SECRET_KEY = '(!@r(#)vj48o=8b1f5s3)#lv$a^+%*^fzzz#r0s$uhjm$tcc_q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', shaash-blogger.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'shaash-blogger.herokuapp.com/']
 
 
 # Application definition
