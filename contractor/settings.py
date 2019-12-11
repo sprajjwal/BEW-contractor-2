@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(!@r(#)vj48o=8b1f5s3)#lv$a^+%*^fzzz#r0s$uhjm$tcc_q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'shaash-blogger.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','shaash-blogger.herokuapp.com']
 
 
 # Application definition
@@ -130,3 +130,6 @@ STATICFILES_DIRS = [
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+# Required for Heroku
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
