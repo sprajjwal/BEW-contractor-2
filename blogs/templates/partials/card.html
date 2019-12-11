@@ -1,6 +1,6 @@
 {% load static %}
 <div class="card mb-3">
-  <h5 class="card-header ">{{ page.title }}<small style="margin-left:5px; font-weight:100;">@{{ page.author.username }}</small></h5>
+  <h5 class="card-header ">{{ page.title }}<small style="margin-left:5px;font-family: 'Sofia'">@{{ page.author.username }}</small></h5>
   <div class="card-body border-dark">
     <p class="card-text text-dark">
       {{ page.content|truncatewords_html:30 }}
@@ -17,6 +17,6 @@
   <div class="card-footer">
     <small>Public: {% if page.is_public %}Yes {% else %} No {% endif %}</small>
     <br>
-    <small class="text-muted">Last updated {{ page.modified|date:"SHORT_DATETIME_FORMAT" }} by</small>
+    <small class="text-muted">Last updated {{ page.modified|date:"SHORT_DATETIME_FORMAT" }}</small>
   </div>
 </div>
