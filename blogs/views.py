@@ -34,7 +34,7 @@ class PageDetailView(DetailView):
 
     def get(self, request, slug):
         """ Returns a specific blog page by slug. """
-        page = self.get_queryset().get(slug__iexact=slug)
+        page = get_object_or_404(Page, slug=slug)
         return render(request, 'page.html', {
           'page': page
         })

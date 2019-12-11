@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
-  <link rel='stylesheet' href="blogs/list.css">
+  <link rel='stylesheet' href="/static/list.css">
 {% endblock %}
 {% block content %}
   {% if user.is_authenticated %}

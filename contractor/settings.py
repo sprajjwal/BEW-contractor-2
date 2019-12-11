@@ -25,7 +25,7 @@ SECRET_KEY = '(!@r(#)vj48o=8b1f5s3)#lv$a^+%*^fzzz#r0s$uhjm$tcc_q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'https://shaash-blogger.herokuapp.com/']
 
 
 # Application definition
@@ -120,11 +120,6 @@ BLOG_PAGE_TITLE_MAX_LENGTH = 600
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, "static"),
-]
 
 
 STATIC_URL = '/static/'
