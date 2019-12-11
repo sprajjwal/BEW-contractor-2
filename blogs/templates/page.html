@@ -7,6 +7,10 @@
       <hr>
       <p>{{ page.content|linebreaksbr }}</p>
       <hr>
+      {% if page.author == user%}
+      <a href="{% url 'blog-update-page' page.slug %}" style="margin-right:10px;">Update</a>
+      <a href="{% url 'blog-delete-page' page.slug %}" style="margin-right:10px;">Delete</a>
+      {% endif %}
       <a href="{% url 'blog-list-page' %}">Back to List</a>
     </div>
   </div>

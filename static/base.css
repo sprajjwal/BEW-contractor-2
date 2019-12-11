@@ -1,0 +1,21 @@
+.navbar {
+    background-color: rgb(212, 211, 196);
+    height: 70px;
+    padding: 0 5%;
+}
+
+.navbar-brand {
+    color:rgb(119, 35, 49);
+    font-weight: 300;
+}
+.greet {
+    color: gray;
+    font-family: 'Sofia';
+    font-size: 3vmin;
+}
+
+body {
+    background-color: rgb(204, 204, 207);
+    padding: 0;
+    margin: 0;
+}

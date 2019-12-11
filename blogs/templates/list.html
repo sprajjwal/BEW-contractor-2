@@ -1,12 +1,27 @@
 {% extends "base.html" %}
-{% {% regroup pages|dictsory:'author' by request.user as user_pages %}}
+{% block title %}
+  <link rel='stylesheet' href="blogs/list.css">
+{% endblock %}
 {% block content %}
-  <h3>Wikis {% if pages %}<small class="text-muted">({{ user_pages|length }} Page{{ user_pages|length|pluralize:"s" }})</small>{% endif %}</h3>
+  {% if user.is_authenticated %}
+    <h3>Your Blogs {% if user_pages %}<small class="text-muted">({{ user_pages|length }} Page{{ user_pages|length|pluralize:"s" }})</small>{% endif %}</h3>
+    <hr>
+    {% if user_pages %}
+      <div class="card-columns">
+        {% for page in user_pages %}
+          {% include "partials/card.html" %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="alert alert-primary" role="alert">No pages to display.</div>
+    {% endif %}
+  {% endif %}
+  <h3>Blogs {% if all_pages %}<small class="text-muted">({{ all_pages|length }} Page{{ all_pages|length|pluralize:"s" }})</small>{% endif %}</h3>
   <hr>
-  {% if pages %}
+  {% if all_pages %}
     <div class="card-columns">
-      {% for page in pages %}
-        {% if page.author == user %}
+      {% for page in all_pages %}
+        {% if page.is_public is True %}
           {% include "partials/card.html" %}
         {% endif %}
       {% endfor %}
